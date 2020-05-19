@@ -2,15 +2,17 @@
 package rmi;
 
 import java.rmi.registry.Registry;
+import java.io.Serializable;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 
-public class Server implements Hello {
+public class Server implements Hello, Serializable {
 
     public Server() {}
 
     @Override
     public String sayHello() {
+    	System.out.println("Petición recibida");
         return "Hello, world!";
     }
 
