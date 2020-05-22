@@ -3,6 +3,7 @@ package rmi;
 
 import java.rmi.registry.Registry;
 import java.io.Serializable;
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -16,6 +17,12 @@ public class Server implements Hello, Serializable {
         return "Hello, world!";
     }
 
+	@Override
+	public String digaChao(int i) throws RemoteException {
+		System.out.println("Petición a chao recibida");
+		return "Chao número " + i;
+	}
+	
     public static void main(String args[]) {
 
         try {
@@ -37,4 +44,5 @@ public class Server implements Hello, Serializable {
             e.printStackTrace();
         }
     }
+
 }

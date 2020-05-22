@@ -12,4 +12,5 @@ public interface Hello extends Remote  {
      * @throws RemoteException
      */
     public String sayHello() throws RemoteException;
+    public String digaChao(int i)  throws RemoteException;
 }

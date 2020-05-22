@@ -23,6 +23,10 @@ public class Client implements Serializable {
             //Ejecutamos cualquiera de sus métodos
             String response = stub.sayHello();
             System.out.println("Respuesta: " + response);
+            
+            response = stub.digaChao(1000);
+            System.out.println("Respuesta: " + response);
+            
         } catch (Exception e) {
             System.err.println("Client exception: " + e.toString());
             e.printStackTrace();
